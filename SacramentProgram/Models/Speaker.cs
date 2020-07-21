@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SacramentProgram.Models
 {
@@ -8,5 +9,7 @@ namespace SacramentProgram.Models
         public Person Person { get; set; }
         public Meeting Meeting { get; set; }
         public string Topic { get; set; }
+
+        
     }
 }
