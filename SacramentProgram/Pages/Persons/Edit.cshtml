@@ -15,6 +15,16 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Person.ID" />
             <div class="form-group">
+                <label asp-for="Person.BroOrSis" class="control-label"></label>
+                <select asp-for="Person.BroOrSis" class="form-control">
+                    <option value="Brother">Brother</option>
+                    <option value="Sister">Sister</option>
+                    <option value="Bishop">Bishop</option>
+                    <option value="President">President</option>
+                </select>
+                <span asp-validation-for="Person.BroOrSis" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Person.FirstName" class="control-label"></label>
                 <input asp-for="Person.FirstName" class="form-control" />
                 <span asp-validation-for="Person.FirstName" class="text-danger"></span>
@@ -25,11 +35,6 @@
                 <span asp-validation-for="Person.LastName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Person.BroOrSis" class="control-label"></label>
-                <input asp-for="Person.BroOrSis" class="form-control" />
-                <span asp-validation-for="Person.BroOrSis" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
@@ -37,7 +42,7 @@
 </div>
 
 <div>
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Index">Back to Directory</a>
 </div>
 
 @section Scripts {

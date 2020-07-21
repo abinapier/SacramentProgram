@@ -48,7 +48,8 @@ namespace SacramentProgram.Pages.Speakers
                 speaker = speaker.Where(x => x.Person == Speaker);
             }
             Person = new SelectList(await personQuery.Distinct().ToListAsync());
-                        Speaker = await _context.Speaker.ToListAsync();
+            Speaker = await _context.Speaker.ToListAsync();
         }
     }
 }
+

@@ -20,10 +20,20 @@ namespace SacramentProgram.Pages.Persons
         }
 
         public IList<Person> Person { get;set; }
-
+        [BindProperty(SupportsGet = true)]
+        public string SearchString { get; set; }
         public async Task OnGetAsync()
         {
-            Person = await _context.Person.ToListAsync();
+            var persons = from p in _context.Person
+                           select p;
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                persons = persons.Where(p => p.FirstName.Contains(SearchString) || p.LastName.Contains(SearchString));
+            }
+
+            persons = persons.OrderBy(p => p.LastName);
+
+            Person = await persons.ToListAsync();
         }
     }
 }
