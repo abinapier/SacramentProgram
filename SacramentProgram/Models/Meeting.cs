@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SacramentProgram.Models
 {
@@ -10,7 +11,6 @@ namespace SacramentProgram.Models
 
         [Display(Name = "Meeting Date")]
         [DataType(DataType.Date)]
-        
         public DateTime MeetingDate { get; set; }
 
         
@@ -69,5 +69,16 @@ namespace SacramentProgram.Models
         public int IntermediateSongID { get; set; }
         public int ClosingSongID { get; set; }
         public int ClosingPrayerIdID { get; set; }
+
+        [NotMapped]
+        public string Testing
+        {
+            get
+            {
+                var Testing = MeetingDate.ToLongDateString();
+                return Testing;
+            }
+        }
+
     }
 }
