@@ -15,6 +15,22 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Speaker.ID" />
             <div class="form-group">
+                <label asp-for="Speaker.Person" class="control-label"></label>
+                <select asp-for="Speaker.ID" class="form-control"
+                        asp-items="@Model.PersonDropDown">
+                    <option value="">-- Select Person --</option>
+                </select>
+                <span asp-validation-for="Speaker.ID" class="text-danger" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Speaker.Meeting" class="control-label"></label>
+                <select asp-for="Speaker.ID" class="form-control"
+                        asp-items="@Model.MeetingDatesDropDown">
+                    <option value="">-- Select Meeting Date --</option>
+                </select>
+                <span asp-validation-for="Speaker.ID" class="text-danger" />
+            </div>
+            <div class="form-group">
                 <label asp-for="Speaker.Topic" class="control-label"></label>
                 <input asp-for="Speaker.Topic" class="form-control" />
                 <span asp-validation-for="Speaker.Topic" class="text-danger"></span>

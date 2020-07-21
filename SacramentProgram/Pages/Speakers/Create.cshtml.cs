@@ -52,6 +52,18 @@ namespace SacramentProgram.Pages.Speakers
                 return RedirectToPage("./Index");
             }
 
+            var emptyPerson = new Person();
+            if (await TryUpdateModelAsync<Person>(
+                emptyPerson,
+                "person",
+                p => p.ID, p => p.FirstName, p => p.LastName, p => p.BroOrSis)
+                )
+            {
+                _context.Person.Add(emptyPerson);
+                await _context.SaveChangesAsync();
+                return RedirectToPage("./Index");
+            }
+
             // Select DepartmentID if TryUpdateModelAsync fails.
             PopulatePersonDropDownList(_context);
             PopulateMeetingsDropDownList(_context, emptyMeeting.ID);
