@@ -10,7 +10,7 @@ using SacramentProgram.Models;
 
 namespace SacramentProgram.Pages.Speakers
 {
-    public class CreateModel : PageModel
+    public class CreateModel : MeetingPickerPageModel
     {
         private readonly SacramentProgram.Data.SacramentProgramContext _context;
 
@@ -21,6 +21,7 @@ namespace SacramentProgram.Pages.Speakers
 
         public IActionResult OnGet()
         {
+            PopulateMeetingsDropDownList(_context);
             return Page();
         }
 
@@ -36,8 +37,22 @@ namespace SacramentProgram.Pages.Speakers
                 return Page();
             }
 
-            _context.Speaker.Add(Speaker);
-            await _context.SaveChangesAsync();
+            var emptyMeeting = new Meeting();
+            if (await TryUpdateModelAsync<Meeting>(
+                 emptyMeeting,
+                 "meeting",   // Prefix for form value.
+                  s => s.ID, s => s.MeetingDate, s => s.Conducting, s => s.Presiding, s => s.Accompaniment, s => s.LeadingMusic, s => s.OpeningSong, s => s.OpeningPrayer, s => s.SacramentSong, s => s.MusicalNumber, s => s.IntermediateSong, s => s.ClosingSong, s => s.ClosingPrayerId, s => s.WardName, s => s.Speakers))
+            {
+                _context.Meeting.Add(emptyMeeting);
+                await _context.SaveChangesAsync();
+                return RedirectToPage("./Index");
+            }
+
+            // Select DepartmentID if TryUpdateModelAsync fails.
+            PopulateMeetingsDropDownList(_context, emptyMeeting.ID);
+
+            //_context.Speaker.Add(Speaker);
+            //await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
         }
