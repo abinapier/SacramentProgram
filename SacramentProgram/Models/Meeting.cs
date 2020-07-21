@@ -8,21 +8,21 @@ namespace SacramentProgram.Models
         public int ID { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime meetingDate { get; set; }
+        public DateTime MeetingDate { get; set; }
 
-        public int conductingId { get; set; }
-        public int presidingId { get; set; }
-        public int accompanimentId { get; set; }
-        public int leadingMusicId { get; set; }
-        public int songOneId { get; set; }
-        public int openingPrayerId { get; set; }
-        public int speakerOneId { get; set; }
-        public int songTwoId { get; set; }
-        public int speakerTwoId { get; set; }
-        public int speakerThreeId { get; set; }
-        public int songThreeId { get; set; }
-        public int musicalNumberId { get; set; }
-        public int closingPrayerId { get; set; }
-        public string wardName { get; set; }
+        public int ConductingId { get; set; }
+        public int PresidingId { get; set; }
+        public int AccompanimentId { get; set; }
+        public int LeadingMusicId { get; set; }
+        public int SongOneId { get; set; }
+        public int OpeningPrayerId { get; set; }
+        public int SpeakerOneId { get; set; }
+        public int SongTwoId { get; set; }
+        public int SpeakerTwoId { get; set; }
+        public int SpeakerThreeId { get; set; }
+        public int SongThreeId { get; set; }
+        public int MusicalNumberId { get; set; }
+        public int ClosingPrayerId { get; set; }
+        public string WardName { get; set; }
     }
 }
