@@ -27,7 +27,8 @@ namespace SacramentProgram.Pages.Meetings
             {
                 return NotFound();
             }
-
+            await _context.Person.ToListAsync();
+            await _context.Song.ToListAsync();
             Meeting = await _context.Meeting.FirstOrDefaultAsync(m => m.ID == id);
 
             if (Meeting == null)

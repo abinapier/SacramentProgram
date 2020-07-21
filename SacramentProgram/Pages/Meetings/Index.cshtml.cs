@@ -23,6 +23,8 @@ namespace SacramentProgram.Pages.Meetings
 
         public async Task OnGetAsync()
         {
+            await _context.Person.ToListAsync();
+            await _context.Song.ToListAsync();
             Meeting = await _context.Meeting.ToListAsync();
         }
     }
