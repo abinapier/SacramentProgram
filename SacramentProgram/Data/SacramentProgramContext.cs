@@ -19,5 +19,7 @@ namespace SacramentProgram.Data
         public DbSet<SacramentProgram.Models.Meeting> Meeting { get; set; }
 
         public DbSet<SacramentProgram.Models.Person> Person { get; set; }
+
+        public DbSet<SacramentProgram.Models.Speaker> Speaker { get; set; }
     }
 }
