@@ -39,39 +39,21 @@ namespace SacramentProgram.Pages.Speakers
                 return Page();
             }
 
-  
-
-            var emptyMeeting = new Meeting();
-            if (await TryUpdateModelAsync<Meeting>(
-                 emptyMeeting,
-                 "meeting",   // Prefix for form value.
-                  s => s.ID, s => s.MeetingDate, s => s.Conducting, s => s.Presiding, s => s.Accompaniment, s => s.LeadingMusic, s => s.OpeningSong, s => s.OpeningPrayer, s => s.SacramentSong, s => s.MusicalNumber, s => s.IntermediateSong, s => s.ClosingSong, s => s.ClosingPrayerId, s => s.WardName, s => s.Speakers))
+            var emptySpeaker = new Speaker();
+            if (await TryUpdateModelAsync<Speaker>(
+                 emptySpeaker,
+                 "speaker",   // Prefix for form value.
+                  s => s.ID, s => s.MeetingID, s=> s.PersonID, s => s.Topic))
             {
-                _context.Meeting.Add(emptyMeeting);
-                await _context.SaveChangesAsync();
-                return RedirectToPage("./Index");
-            }
-
-            var emptyPerson = new Person();
-            if (await TryUpdateModelAsync<Person>(
-                emptyPerson,
-                "person",
-                p => p.ID, p => p.FirstName, p => p.LastName, p => p.BroOrSis)
-                )
-            {
-                _context.Person.Add(emptyPerson);
+                _context.Speaker.Add(emptySpeaker);
                 await _context.SaveChangesAsync();
                 return RedirectToPage("./Index");
             }
 
             // Select DepartmentID if TryUpdateModelAsync fails.
             PopulatePersonDropDownList(_context);
-            PopulateMeetingsDropDownList(_context, emptyMeeting.ID);
-
-            _context.Speaker.Add(Speaker);
-            await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index");
+            PopulateMeetingsDropDownList(_context);
+            return Page();
         }
     }
 }

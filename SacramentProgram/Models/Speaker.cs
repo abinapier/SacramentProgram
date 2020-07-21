@@ -13,6 +13,9 @@ namespace SacramentProgram.Models
         public Meeting Meeting { get; set; }
         public string Topic { get; set; }
 
-        
+        public int PersonID { get; set; }
+        public int MeetingID { get; set; }
+
+
     }
 }

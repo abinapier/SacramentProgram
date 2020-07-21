@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SacramentProgram.Migrations
 {
-    public partial class initialMigration : Migration
+    public partial class initailMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -153,9 +153,9 @@ namespace SacramentProgram.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    PersonID = table.Column<int>(nullable: true),
-                    MeetingID = table.Column<int>(nullable: true),
-                    Topic = table.Column<string>(nullable: true)
+                    Topic = table.Column<string>(nullable: true),
+                    PersonID = table.Column<int>(nullable: false),
+                    MeetingID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -165,13 +165,13 @@ namespace SacramentProgram.Migrations
                         column: x => x.MeetingID,
                         principalTable: "Meeting",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Speaker_Person_PersonID",
                         column: x => x.PersonID,
                         principalTable: "Person",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

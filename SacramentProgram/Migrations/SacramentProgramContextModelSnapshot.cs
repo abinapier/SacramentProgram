@@ -150,10 +150,10 @@ namespace SacramentProgram.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("MeetingID")
+                    b.Property<int>("MeetingID")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("PersonID")
+                    b.Property<int>("PersonID")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Topic")
@@ -246,11 +246,15 @@ namespace SacramentProgram.Migrations
                 {
                     b.HasOne("SacramentProgram.Models.Meeting", "Meeting")
                         .WithMany("Speakers")
-                        .HasForeignKey("MeetingID");
+                        .HasForeignKey("MeetingID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("SacramentProgram.Models.Person", "Person")
                         .WithMany()
-                        .HasForeignKey("PersonID");
+                        .HasForeignKey("PersonID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

@@ -9,8 +9,8 @@ using SacramentProgram.Data;
 namespace SacramentProgram.Migrations
 {
     [DbContext(typeof(SacramentProgramContext))]
-    [Migration("20200721212129_initialMigration")]
-    partial class initialMigration
+    [Migration("20200721221113_initailMigration")]
+    partial class initailMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -152,10 +152,10 @@ namespace SacramentProgram.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("MeetingID")
+                    b.Property<int>("MeetingID")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("PersonID")
+                    b.Property<int>("PersonID")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Topic")
@@ -248,11 +248,15 @@ namespace SacramentProgram.Migrations
                 {
                     b.HasOne("SacramentProgram.Models.Meeting", "Meeting")
                         .WithMany("Speakers")
-                        .HasForeignKey("MeetingID");
+                        .HasForeignKey("MeetingID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("SacramentProgram.Models.Person", "Person")
                         .WithMany()
-                        .HasForeignKey("PersonID");
+                        .HasForeignKey("PersonID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

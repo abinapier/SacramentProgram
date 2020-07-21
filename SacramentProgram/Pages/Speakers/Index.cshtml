@@ -42,10 +42,10 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Person)
+                    @Html.DisplayFor(modelItem => item.Person.FullName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Meeting)
+                    @Html.DisplayFor(modelItem => item.Meeting.MeetingDate)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Topic)

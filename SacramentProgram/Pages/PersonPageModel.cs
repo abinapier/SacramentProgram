@@ -11,6 +11,7 @@ namespace SacramentProgram.Pages.Meetings
         public SelectList PersonDropDown { get; set; }
         public SelectList SongDropDown { get; set; }
         public SelectList MusicNumDropDown { get; set; }
+        public SelectList MeetingDatesDropDown { get; set; }
 
         public void PopulatePersonDropDownList(SacramentProgramContext _context)
         {
@@ -44,17 +45,16 @@ namespace SacramentProgram.Pages.Meetings
                         "ID", "FullPerformance");
         }
 
-        public SelectList MeetingDatesDropDown { get; set; }
+        
 
-        public void PopulateMeetingsDropDownList(SacramentProgramContext _context,
-            object selectedMeeting = null)
+        public void PopulateMeetingsDropDownList(SacramentProgramContext _context)
         {
             var meetingQuery = from m in _context.Meeting
                                orderby m.MeetingDate
-                               select m.MeetingDate;
+                               select m;
 
             MeetingDatesDropDown = new SelectList(meetingQuery,
-                        "ID", "MeetingDate", selectedMeeting);
+                        "ID", "MeetingDate");
         }
     }
 }

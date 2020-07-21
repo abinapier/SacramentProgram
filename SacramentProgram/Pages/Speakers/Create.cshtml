@@ -14,20 +14,20 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Speaker.Person" class="control-label"></label>
-                <select asp-for="Speaker.ID" class="form-control"
+                <label asp-for="Speaker.PersonID" class="control-label"></label>
+                <select asp-for="Speaker.PersonID" class="form-control"
                         asp-items="@Model.PersonDropDown">
                     <option value="">-- Select Person --</option>
                 </select>
-                <span asp-validation-for="Speaker.ID" class="text-danger" />
+                <span asp-validation-for="Speaker.PersonID" class="text-danger" />
             </div>
             <div class="form-group">
-                <label asp-for="Speaker.Meeting" class="control-label"></label>
-                <select asp-for="Speaker.ID" class="form-control"
+                <label asp-for="Speaker.MeetingID" class="control-label"></label>
+                <select asp-for="Speaker.MeetingID" class="form-control"
                         asp-items="@Model.MeetingDatesDropDown">
                     <option value="">-- Select Meeting Date --</option>
                 </select>
-                <span asp-validation-for="Speaker.ID" class="text-danger" />
+                <span asp-validation-for="Speaker.MeetingID" class="text-danger" />
             </div>
             <div class="form-group">
                 <label asp-for="Speaker.Topic" class="control-label"></label>
