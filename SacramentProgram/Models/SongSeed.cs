@@ -49,6 +49,60 @@ namespace RazorPagesMovie.Models
                     {
                         Name = "Redeemer of Isreal",
                         PageNum = 5
+                    },
+
+                    new Song
+                    {
+                        Name = "Rereemer of Isreal",
+                        PageNum = 6
+                    },
+
+                    new Song
+                    {
+                        Name = "Isreal, Isreal, God is calling",
+                        PageNum = 7
+                    },
+
+                    new Song
+                    {
+                        Name = "Awake and Arise",
+                        PageNum = 8
+                    },
+
+                    new Song
+                    {
+                        Name = "Come, Rejoice",
+                        PageNum = 9
+                    },
+
+                    new Song
+                    {
+                        Name = "Come, Sing to the Lord",
+                        PageNum = 10
+                    },
+
+                    new Song
+                    {
+                        Name = "What was Witnessed in the Heavens?",
+                        PageNum = 11
+                    },
+
+                    new Song
+                    {
+                        Name = "Twas Witnessed in the Morning Sky",
+                        PageNum = 12
+                    },
+
+                    new Song
+                    {
+                        Name = "An Angel from on High",
+                        PageNum = 13
+                    },
+
+                    new Song
+                    {
+                        Name = "Sweet Is the Peace the Gospel Brings",
+                        PageNum = 14
                     }
                 );
                 context.SaveChanges();
