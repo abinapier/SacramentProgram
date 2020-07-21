@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SacramentProgram.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class initialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,7 +12,7 @@ namespace SacramentProgram.Migrations
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Sqlite:Autoincrement", true),
                     FirstName = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
                     BroOrSis = table.Column<string>(nullable: true)
@@ -27,7 +27,7 @@ namespace SacramentProgram.Migrations
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(nullable: true),
                     PageNum = table.Column<int>(nullable: false)
                 },
@@ -41,7 +41,7 @@ namespace SacramentProgram.Migrations
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Sqlite:Autoincrement", true),
                     SongID = table.Column<int>(nullable: true),
                     Performer = table.Column<string>(nullable: true)
                 },
@@ -61,8 +61,9 @@ namespace SacramentProgram.Migrations
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Sqlite:Autoincrement", true),
                     MeetingDate = table.Column<DateTime>(nullable: false),
+                    WardName = table.Column<string>(nullable: true),
                     ConductingID = table.Column<int>(nullable: false),
                     PresidingID = table.Column<int>(nullable: false),
                     AccompanimentID = table.Column<int>(nullable: false),
@@ -71,10 +72,9 @@ namespace SacramentProgram.Migrations
                     OpeningPrayerID = table.Column<int>(nullable: false),
                     SacramentSongID = table.Column<int>(nullable: false),
                     MusicalNumberID = table.Column<int>(nullable: true),
-                    IntermediateSongID = table.Column<int>(nullable: true),
+                    IntermediateSongID = table.Column<int>(nullable: false),
                     ClosingSongID = table.Column<int>(nullable: false),
-                    ClosingPrayerIdID = table.Column<int>(nullable: false),
-                    WardName = table.Column<string>(nullable: false)
+                    ClosingPrayerIdID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -108,7 +108,7 @@ namespace SacramentProgram.Migrations
                         column: x => x.IntermediateSongID,
                         principalTable: "Song",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Meeting_Person_LeadingMusicID",
                         column: x => x.LeadingMusicID,
@@ -152,7 +152,7 @@ namespace SacramentProgram.Migrations
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Sqlite:Autoincrement", true),
                     PersonID = table.Column<int>(nullable: true),
                     MeetingID = table.Column<int>(nullable: true),
                     Topic = table.Column<string>(nullable: true)

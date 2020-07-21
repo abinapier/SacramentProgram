@@ -24,60 +24,60 @@
                 <span asp-validation-for="Meeting.WardName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.Conducting" class="control-label"></label>
-                <select asp-for="Meeting.Conducting" class="form-control"
+                <label asp-for="Meeting.ConductingID" class="control-label"></label>
+                <select asp-for="Meeting.ConductingID" class="form-control"
                         asp-items="@Model.PersonDropDown">
                     <option value="">-- Select Person --</option>
                 </select>
-                <span asp-validation-for="Meeting.Conducting" class="text-danger" />
+                <span asp-validation-for="Meeting.ConductingID" class="text-danger" />
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.Presiding" class="control-label"></label>
-                <select asp-for="Meeting.Presiding" class="form-control"
+                <label asp-for="Meeting.PresidingID" class="control-label"></label>
+                <select asp-for="Meeting.PresidingID" class="form-control"
                         asp-items="@Model.PersonDropDown">
                     <option value="">-- Select Person --</option>
                 </select>
-                <span asp-validation-for="Meeting.Presiding" class="text-danger" />
+                <span asp-validation-for="Meeting.PresidingID" class="text-danger" />
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.Accompaniment" class="control-label"></label>
-                <select asp-for="Meeting.Accompaniment" class="form-control"
+                <label asp-for="Meeting.AccompanimentID" class="control-label"></label>
+                <select asp-for="Meeting.AccompanimentID" class="form-control"
                         asp-items="@Model.PersonDropDown">
                     <option value="">-- Select Person --</option>
                 </select>
-                <span asp-validation-for="Meeting.Accompaniment" class="text-danger" />
+                <span asp-validation-for="Meeting.AccompanimentID" class="text-danger" />
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.LeadingMusic" class="control-label"></label>
-                <select asp-for="Meeting.LeadingMusic" class="form-control"
+                <label asp-for="Meeting.LeadingMusicID" class="control-label"></label>
+                <select asp-for="Meeting.LeadingMusicID" class="form-control"
                         asp-items="@Model.PersonDropDown">
                     <option value="">-- Select Person --</option>
                 </select>
-                <span asp-validation-for="Meeting.LeadingMusic" class="text-danger" />
+                <span asp-validation-for="Meeting.LeadingMusicID" class="text-danger" />
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.OpeningSong" class="control-label"></label>
-                <select asp-for="Meeting.OpeningSong" class="form-control"
+                <label asp-for="Meeting.OpeningSongID" class="control-label"></label>
+                <select asp-for="Meeting.OpeningSongID" class="form-control"
                         asp-items="@Model.SongDropDown">
                     <option value="">-- Select Song --</option>
                 </select>
-                <span asp-validation-for="Meeting.OpeningSong" class="text-danger"></span>
+                <span asp-validation-for="Meeting.OpeningSongID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.OpeningPrayer" class="control-label"></label>
-                <select asp-for="Meeting.ID" class="form-control"
+                <label asp-for="Meeting.OpeningPrayerID" class="control-label"></label>
+                <select asp-for="Meeting.OpeningPrayerID" class="form-control"
                         asp-items="@Model.PersonDropDown">
                     <option value="">-- Select Person --</option>
                 </select>
-                <span asp-validation-for="Meeting.OpeningPrayer" class="text-danger" />
+                <span asp-validation-for="Meeting.OpeningPrayerID" class="text-danger" />
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.SacramentSong" class="control-label"></label>
-                <select asp-for="Meeting.SacramentSong" class="form-control"
+                <label asp-for="Meeting.SacramentSongID" class="control-label"></label>
+                <select asp-for="Meeting.SacramentSongID" class="form-control"
                         asp-items="@Model.SongDropDown">
                     <option value="">-- Select Song --</option>
                 </select>
-                <span asp-validation-for="Meeting.SacramentSong" class="text-danger"></span>
+                <span asp-validation-for="Meeting.SacramentSongID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Meeting.MusicalNumber" class="control-label"></label>
@@ -85,28 +85,28 @@
                 <span asp-validation-for="Meeting.MusicalNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.IntermediateSong" class="control-label"></label>
-                <select asp-for="Meeting.IntermediateSong" class="form-control"
+                <label asp-for="Meeting.IntermediateSongID" class="control-label"></label>
+                <select asp-for="Meeting.IntermediateSongID" class="form-control"
                         asp-items="@Model.SongDropDown">
                     <option value="">-- Select Song --</option>
                 </select>
-                <span asp-validation-for="Meeting.IntermediateSong" class="text-danger"></span>
+                <span asp-validation-for="Meeting.IntermediateSongID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.ClosingSong" class="control-label"></label>
-                <select asp-for="Meeting.ClosingSong" class="form-control"
+                <label asp-for="Meeting.ClosingSongID" class="control-label"></label>
+                <select asp-for="Meeting.ClosingSongID" class="form-control"
                         asp-items="@Model.SongDropDown">
                     <option value="">-- Select Song --</option>
                 </select>
-                <span asp-validation-for="Meeting.ClosingSong" class="text-danger"></span>
+                <span asp-validation-for="Meeting.ClosingSongID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.ClosingPrayerId" class="control-label"></label>
-                <select asp-for="Meeting.ID" class="form-control"
+                <label asp-for="Meeting.ClosingPrayerIdID" class="control-label"></label>
+                <select asp-for="Meeting.ClosingPrayerIdID" class="form-control"
                         asp-items="@Model.PersonDropDown">
                     <option value="">-- Select Person --</option>
                 </select>
-                <span asp-validation-for="Meeting.ClosingPrayerId" class="text-danger" />
+                <span asp-validation-for="Meeting.ClosingPrayerIdID" class="text-danger" />
             </div>
            
             <div class="form-group">
