@@ -13,7 +13,6 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Meeting.ID" />
             <div class="form-group">
                 <label asp-for="Meeting.MeetingDate" class="control-label"></label>
                 <input asp-for="Meeting.MeetingDate" class="form-control" />
@@ -24,6 +23,62 @@
                 <input asp-for="Meeting.WardName" class="form-control" />
                 <span asp-validation-for="Meeting.WardName" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="Meeting.Conducting" class="control-label"></label>
+                <input asp-for="Meeting.Conducting" class="form-control" />
+                <span asp-validation-for="Meeting.Conducting" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meeting.Presiding" class="control-label"></label>
+                <input asp-for="Meeting.Presiding" class="form-control" />
+                <span asp-validation-for="Meeting.Presiding" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meeting.Accompaniment" class="control-label"></label>
+                <input asp-for="Meeting.Accompaniment" class="form-control" />
+                <span asp-validation-for="Meeting.Accompaniment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meeting.LeadingMusic" class="control-label"></label>
+                <input asp-for="Meeting.LeadingMusic" class="form-control" />
+                <span asp-validation-for="Meeting.LeadingMusic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meeting.OpeningSong" class="control-label"></label>
+                <input asp-for="Meeting.OpeningSong" class="form-control" />
+                <span asp-validation-for="Meeting.OpeningSong" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meeting.OpeningPrayer" class="control-label"></label>
+                <input asp-for="Meeting.OpeningPrayer" class="form-control" />
+                <span asp-validation-for="Meeting.OpeningPrayer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meeting.SacramentSong" class="control-label"></label>
+                <input asp-for="Meeting.SacramentSong" class="form-control" />
+                <span asp-validation-for="Meeting.SacramentSong" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meeting.MusicalNumber" class="control-label"></label>
+                <input asp-for="Meeting.MusicalNumber" class="form-control" />
+                <span asp-validation-for="Meeting.MusicalNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meeting.IntermediateSong" class="control-label"></label>
+                <input asp-for="Meeting.IntermediateSong" class="form-control" />
+                <span asp-validation-for="Meeting.IntermediateSong" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meeting.ClosingSong" class="control-label"></label>
+                <input asp-for="Meeting.ClosingSong" class="form-control" />
+                <span asp-validation-for="Meeting.ClosingSong" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meeting.ClosingPrayerId" class="control-label"></label>
+                <input asp-for="Meeting.ClosingPrayerId" class="form-control" />
+                <span asp-validation-for="Meeting.ClosingPrayerId" class="text-danger"></span>
+            </div>
+            
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

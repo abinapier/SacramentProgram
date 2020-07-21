@@ -10,7 +10,7 @@ using SacramentProgram.Models;
 
 namespace SacramentProgram.Pages.Meetings
 {
-    public class CreateModel : PageModel
+    public class CreateModel : PersonPageModel
     {
         private readonly SacramentProgram.Data.SacramentProgramContext _context;
 
@@ -21,6 +21,7 @@ namespace SacramentProgram.Pages.Meetings
 
         public IActionResult OnGet()
         {
+            PopulatePersonDropDownList(_context);
             return Page();
         }
 
@@ -31,15 +32,21 @@ namespace SacramentProgram.Pages.Meetings
         // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            var emptyMeeting = new Meeting();
 
-            _context.Meeting.Add(Meeting);
-            await _context.SaveChangesAsync();
+           // if (await TryUpdateModelAsync<Meeting>(
+                // emptyMeeting,
+                // "Meeting",   // Prefix for form value.
+                // s => s.ID, s => s.MeetingDate, s => s.Conducting, s => s.Presiding, s => s.Accompaniment, s => s.LeadingMusic, s => s.OpeningSong, s => s.OpeningPrayer, s => s.SacramentSong, s => s.MusicalNumber, s => s.IntermediateSong, s => s.ClosingSong, s => s.ClosingPrayerId, s => s.WardName, s => s.Speakers))
+            //{
+               // _context.Meeting.Add(emptyMeeting);
+              //  await _context.SaveChangesAsync();
+              //  return RedirectToPage("./Index");
+           // }
 
-            return RedirectToPage("./Index");
+            // Select DepartmentID if TryUpdateModelAsync fails.
+            PopulatePersonDropDownList(_context);
+            return Page();
         }
     }
 }
