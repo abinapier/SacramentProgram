@@ -43,5 +43,18 @@ namespace SacramentProgram.Pages.Meetings
             MusicNumDropDown = new SelectList(musicQuery,
                         "ID", "FullPerformance");
         }
+
+        public SelectList MeetingDatesDropDown { get; set; }
+
+        public void PopulateMeetingsDropDownList(SacramentProgramContext _context,
+            object selectedMeeting = null)
+        {
+            var meetingQuery = from m in _context.Meeting
+                               orderby m.MeetingDate
+                               select m.MeetingDate;
+
+            MeetingDatesDropDown = new SelectList(meetingQuery,
+                        "ID", "MeetingDate", selectedMeeting);
+        }
     }
 }
