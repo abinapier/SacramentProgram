@@ -21,6 +21,7 @@ namespace SacramentProgram.Pages.Meetings
 
         public IActionResult OnGet()
         {
+
             return Page();
         }
 
