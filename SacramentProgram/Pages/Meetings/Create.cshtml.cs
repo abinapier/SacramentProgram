@@ -23,6 +23,7 @@ namespace SacramentProgram.Pages.Meetings
         {
             PopulatePersonDropDownList(_context);
             PopulateSongDropDownList(_context);
+            PopulateMusicNumDropDownList(_context);
             return Page();
         }
 
@@ -48,6 +49,7 @@ namespace SacramentProgram.Pages.Meetings
             // Select DepartmentID if TryUpdateModelAsync fails.
             PopulatePersonDropDownList(_context);
             PopulateSongDropDownList(_context);
+            PopulateMusicNumDropDownList(_context);
             return Page();
         }
     }

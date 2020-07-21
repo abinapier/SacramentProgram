@@ -11,5 +11,13 @@ namespace SacramentProgram.Models
         public Song Song { get; set; }
 
         public string Performer { get; set; }
+        public string MusicalPerformance
+        {
+            get
+            {
+                var FullPerformance = Song + " " + Performer + " ";
+                return FullPerformance;
+            }
+        }
     }
 }
