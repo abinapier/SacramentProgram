@@ -22,6 +22,7 @@ namespace SacramentProgram.Pages.Meetings
         public IActionResult OnGet()
         {
             PopulatePersonDropDownList(_context);
+            PopulateSongDropDownList(_context);
             return Page();
         }
 
@@ -46,6 +47,7 @@ namespace SacramentProgram.Pages.Meetings
 
             // Select DepartmentID if TryUpdateModelAsync fails.
             PopulatePersonDropDownList(_context);
+            PopulateSongDropDownList(_context);
             return Page();
         }
     }

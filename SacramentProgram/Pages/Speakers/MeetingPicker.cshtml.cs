@@ -8,7 +8,7 @@ namespace SacramentProgram.Pages.Speakers
 {
     public class MeetingPickerPageModel : PageModel
     {
-        public SelectList MeetingDatesSL { get; set; }
+        public SelectList MeetingDatesDropDown { get; set; }
 
         public void PopulateMeetingsDropDownList(SacramentProgramContext _context,
             object selectedMeeting = null)
@@ -17,7 +17,7 @@ namespace SacramentProgram.Pages.Speakers
                                    orderby m.MeetingDate 
                                    select m.MeetingDate;
 
-            MeetingDatesSL = new SelectList(meetingQuery,
+            MeetingDatesDropDown = new SelectList(meetingQuery,
                         "ID", "MeetingDate", selectedMeeting);
         }
     }
