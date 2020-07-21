@@ -25,23 +25,35 @@
             </div>
             <div class="form-group">
                 <label asp-for="Meeting.Conducting" class="control-label"></label>
-                <input asp-for="Meeting.Conducting" class="form-control" />
-                <span asp-validation-for="Meeting.Conducting" class="text-danger"></span>
+                <select asp-for="Meeting.ID" class="form-control"
+                        asp-items="@Model.PersonDropDown">
+                    <option value="">-- Select Person --</option>
+                </select>
+                <span asp-validation-for="Meeting.ID" class="text-danger" />
             </div>
             <div class="form-group">
                 <label asp-for="Meeting.Presiding" class="control-label"></label>
-                <input asp-for="Meeting.Presiding" class="form-control" />
-                <span asp-validation-for="Meeting.Presiding" class="text-danger"></span>
+                <select asp-for="Meeting.ID" class="form-control"
+                        asp-items="@Model.PersonDropDown">
+                    <option value="">-- Select Person --</option>
+                </select>
+                <span asp-validation-for="Meeting.ID" class="text-danger" />
             </div>
             <div class="form-group">
                 <label asp-for="Meeting.Accompaniment" class="control-label"></label>
-                <input asp-for="Meeting.Accompaniment" class="form-control" />
-                <span asp-validation-for="Meeting.Accompaniment" class="text-danger"></span>
+                <select asp-for="Meeting.ID" class="form-control"
+                        asp-items="@Model.PersonDropDown">
+                    <option value="">-- Select Person --</option>
+                </select>
+                <span asp-validation-for="Meeting.ID" class="text-danger" />
             </div>
             <div class="form-group">
                 <label asp-for="Meeting.LeadingMusic" class="control-label"></label>
-                <input asp-for="Meeting.LeadingMusic" class="form-control" />
-                <span asp-validation-for="Meeting.LeadingMusic" class="text-danger"></span>
+                <select asp-for="Meeting.ID" class="form-control"
+                        asp-items="@Model.PersonDropDown">
+                    <option value="">-- Select Person --</option>
+                </select>
+                <span asp-validation-for="Meeting.ID" class="text-danger" />
             </div>
             <div class="form-group">
                 <label asp-for="Meeting.OpeningSong" class="control-label"></label>
@@ -50,8 +62,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="Meeting.OpeningPrayer" class="control-label"></label>
-                <input asp-for="Meeting.OpeningPrayer" class="form-control" />
-                <span asp-validation-for="Meeting.OpeningPrayer" class="text-danger"></span>
+                <select asp-for="Meeting.ID" class="form-control"
+                        asp-items="@Model.PersonDropDown">
+                    <option value="">-- Select Person --</option>
+                </select>
+                <span asp-validation-for="Meeting.ID" class="text-danger" />
             </div>
             <div class="form-group">
                 <label asp-for="Meeting.SacramentSong" class="control-label"></label>
@@ -75,8 +90,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="Meeting.ClosingPrayerId" class="control-label"></label>
-                <input asp-for="Meeting.ClosingPrayerId" class="form-control" />
-                <span asp-validation-for="Meeting.ClosingPrayerId" class="text-danger"></span>
+                <select asp-for="Meeting.ID" class="form-control"
+                        asp-items="@Model.PersonDropDown">
+                    <option value="">-- Select Person --</option>
+                </select>
+                <span asp-validation-for="Meeting.ID" class="text-danger" />
             </div>
            
             <div class="form-group">

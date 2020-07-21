@@ -20,7 +20,6 @@
   <ItemGroup>
     <Folder Include="Pages\Speakers\" />
     <Folder Include="Pages\Persons\" />
-    <Folder Include="Pages\Meetings\" />
     <Folder Include="Pages\MusicalNums\" />
   </ItemGroup>
 </Project>
