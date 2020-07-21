@@ -1,0 +1,60 @@
+@page
+@model SacramentProgram.Pages.Speakers.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+
+<form>
+    <p>
+        <select asp-for="SpeakerPersons" asp-items="Model.Person">
+            <option value="">All</option>
+        </select>
+        Topic: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Speaker[0].Person)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Speaker[0].Meeting)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Speaker[0].Topic)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Speaker) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Person)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Meeting)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Topic)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
