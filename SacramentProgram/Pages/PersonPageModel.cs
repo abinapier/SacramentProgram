@@ -9,6 +9,7 @@ namespace SacramentProgram.Pages.Meetings
     public class PersonPageModel : PageModel
     {
         public SelectList PersonDropDown { get; set; }
+        public SelectList SongDropDown { get; set; }
 
         public void PopulatePersonDropDownList(SacramentProgramContext _context)
         {
@@ -18,6 +19,16 @@ namespace SacramentProgram.Pages.Meetings
 
             PersonDropDown = new SelectList(personsQuery,
                         "ID", "FullName");
+        }
+
+        public void PopulateSongDropDownList(SacramentProgramContext _context)
+        {
+            var songsQuery = from d in _context.Song
+                               orderby d.PageNum // Sort by name.
+                               select d;
+
+            SongDropDown = new SelectList(songsQuery,
+                        "ID", "Name");
         }
 
         public SelectList MeetingDatesDropDown { get; set; }
