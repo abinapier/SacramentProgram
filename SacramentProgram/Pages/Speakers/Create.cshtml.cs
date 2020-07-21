@@ -56,8 +56,8 @@ namespace SacramentProgram.Pages.Speakers
             PopulatePersonDropDownList(_context);
             PopulateMeetingsDropDownList(_context, emptyMeeting.ID);
 
-            //_context.Speaker.Add(Speaker);
-            //await _context.SaveChangesAsync();
+            _context.Speaker.Add(Speaker);
+            await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
         }
