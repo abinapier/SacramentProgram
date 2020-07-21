@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace SacramentProgram.Models
 {
@@ -22,5 +23,7 @@ namespace SacramentProgram.Models
                 return FullPerson;
             }
         }
+        [NotMapped]
+        public SelectList DropDownList { get; set; }
     }
 }
