@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SacramentProgram.Models
 {
@@ -8,5 +9,14 @@ namespace SacramentProgram.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string BroOrSis { get; set; }
+        [NotMapped]
+        public string FullName
+        {
+            get
+            {
+                var FullPerson = BroOrSis + " " + FirstName + " " +LastName;
+                return FullPerson;
+            }
+        }
     }
 }

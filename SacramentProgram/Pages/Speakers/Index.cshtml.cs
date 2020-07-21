@@ -33,7 +33,7 @@ namespace SacramentProgram.Pages.Speakers
         {
             IQueryable<string> personQuery = from p in _context.Person
                                             orderby p.LastName
-                                            select p.LastName;
+                                            select p.FullName;
 
             var speaker = from s in _context.Speaker
                           select s;
