@@ -19,5 +19,18 @@ namespace SacramentProgram.Pages.Meetings
             PersonDropDown = new SelectList(personsQuery,
                         "ID", "FullName");
         }
+
+        public SelectList MeetingDatesDropDown { get; set; }
+
+        public void PopulateMeetingsDropDownList(SacramentProgramContext _context,
+            object selectedMeeting = null)
+        {
+            var meetingQuery = from m in _context.Meeting
+                               orderby m.MeetingDate
+                               select m.MeetingDate;
+
+            MeetingDatesDropDown = new SelectList(meetingQuery,
+                        "ID", "MeetingDate", selectedMeeting);
+        }
     }
 }

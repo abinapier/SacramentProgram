@@ -7,10 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SacramentProgram.Data;
 using SacramentProgram.Models;
+using SacramentProgram.Pages.Meetings;
 
 namespace SacramentProgram.Pages.Speakers
 {
-    public class CreateModel : MeetingPickerPageModel
+    public class CreateModel : PersonPageModel
     {
         private readonly SacramentProgram.Data.SacramentProgramContext _context;
 
@@ -22,6 +23,7 @@ namespace SacramentProgram.Pages.Speakers
         public IActionResult OnGet()
         {
             PopulateMeetingsDropDownList(_context);
+            PopulatePersonDropDownList(_context);
             return Page();
         }
 
@@ -37,6 +39,8 @@ namespace SacramentProgram.Pages.Speakers
                 return Page();
             }
 
+  
+
             var emptyMeeting = new Meeting();
             if (await TryUpdateModelAsync<Meeting>(
                  emptyMeeting,
@@ -49,6 +53,7 @@ namespace SacramentProgram.Pages.Speakers
             }
 
             // Select DepartmentID if TryUpdateModelAsync fails.
+            PopulatePersonDropDownList(_context);
             PopulateMeetingsDropDownList(_context, emptyMeeting.ID);
 
             //_context.Speaker.Add(Speaker);
