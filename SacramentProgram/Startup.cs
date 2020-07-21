@@ -28,7 +28,7 @@ namespace SacramentProgram
             services.AddRazorPages();
 
             services.AddDbContext<SacramentProgramContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("SacramentProgramContext")));
+                    options.UseSqlite(Configuration.GetConnectionString("SacramentProgramContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

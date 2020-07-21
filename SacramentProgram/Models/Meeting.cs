@@ -9,6 +9,7 @@ namespace SacramentProgram.Models
         public int ID { get; set; }
 
         [DataType(DataType.Date)]
+
         [Required]
         public DateTime MeetingDate { get; set; }
         [Required]
