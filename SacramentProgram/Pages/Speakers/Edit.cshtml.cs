@@ -8,10 +8,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SacramentProgram.Data;
 using SacramentProgram.Models;
+using SacramentProgram.Pages.Meetings;
 
 namespace SacramentProgram.Pages.Speakers
 {
-    public class EditModel : PageModel
+    public class EditModel : PersonPageModel
     {
         private readonly SacramentProgram.Data.SacramentProgramContext _context;
 
@@ -30,7 +31,8 @@ namespace SacramentProgram.Pages.Speakers
                 return NotFound();
             }
 
-            Speaker = await _context.Speaker.FirstOrDefaultAsync(m => m.ID == id);
+            //Speaker = await _context.Speaker.FirstOrDefaultAsync(m => m.ID == id);
+             //   .Include(c => c.Department).FirstOrDefaultAsync(m => m.CourseID == id);
 
             if (Speaker == null)
             {
