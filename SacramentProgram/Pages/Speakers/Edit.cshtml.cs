@@ -64,7 +64,6 @@ namespace SacramentProgram.Pages.Speakers
                     s => s.ID, s => s.MeetingID, s => s.PersonID, s => s.Topic
                     ))
             
-            //_context.Attach(Speaker).State = EntityState.Modified;
 
             try
             {
