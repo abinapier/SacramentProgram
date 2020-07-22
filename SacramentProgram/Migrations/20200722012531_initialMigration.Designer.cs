@@ -9,8 +9,8 @@ using SacramentProgram.Data;
 namespace SacramentProgram.Migrations
 {
     [DbContext(typeof(SacramentProgramContext))]
-    [Migration("20200721235618_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20200722012531_initialMigration")]
+    partial class initialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -99,7 +99,7 @@ namespace SacramentProgram.Migrations
                     b.Property<string>("Performer")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("SongID")
+                    b.Property<int>("SongID")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("ID");
@@ -241,7 +241,9 @@ namespace SacramentProgram.Migrations
                 {
                     b.HasOne("SacramentProgram.Models.Song", "Song")
                         .WithMany()
-                        .HasForeignKey("SongID");
+                        .HasForeignKey("SongID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("SacramentProgram.Models.Speaker", b =>

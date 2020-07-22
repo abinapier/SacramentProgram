@@ -20,11 +20,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="MusicalNum.Song" class="control-label"></label>
-                <select asp-for="MusicalNum.Song" class="form-control"
+                <select asp-for="MusicalNum.SongID" class="form-control"
                         asp-items="@Model.SongDropDown">
                     <option value="">-- Select Person --</option>
                 </select>
-                <span asp-validation-for="MusicalNum.Song" class="text-danger" />
+                <span asp-validation-for="MusicalNum.SongID" class="text-danger" />
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
