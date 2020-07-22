@@ -31,26 +31,38 @@ namespace SacramentProgram.Pages.Speakers
                 return NotFound();
             }
 
-            //Speaker = await _context.Speaker.FirstOrDefaultAsync(m => m.ID == id);
-             //   .Include(c => c.Department).FirstOrDefaultAsync(m => m.CourseID == id);
+            Speaker = await _context.Speaker.FirstOrDefaultAsync(m => m.ID == id);
+            
 
             if (Speaker == null)
             {
                 return NotFound();
             }
+
+            PopulatePersonDropDownList(_context);
+            PopulateMeetingsDropDownList(_context);
+
             return Page();
         }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int? id)
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            _context.Attach(Speaker).State = EntityState.Modified;
+            var speakerToUpdate = await _context.Speaker.FindAsync(id);
+
+                if (await TryUpdateModelAsync<Speaker>(
+                    speakerToUpdate,
+                    "speaker",
+                    s => s.ID, s => s.MeetingID, s => s.PersonID, s => s.Topic
+                    ))
+            
+            //_context.Attach(Speaker).State = EntityState.Modified;
 
             try
             {
@@ -67,7 +79,8 @@ namespace SacramentProgram.Pages.Speakers
                     throw;
                 }
             }
-
+            PopulatePersonDropDownList(_context);
+            PopulateMeetingsDropDownList(_context);
             return RedirectToPage("./Index");
         }
 
