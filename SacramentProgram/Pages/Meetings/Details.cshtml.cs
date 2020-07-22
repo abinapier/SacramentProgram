@@ -30,6 +30,7 @@ namespace SacramentProgram.Pages.Meetings
             await _context.Person.ToListAsync();
             await _context.Song.ToListAsync();
             await _context.MusicalNum.ToListAsync();
+            await _context.Speaker.ToListAsync();
             Meeting = await _context.Meeting.FirstOrDefaultAsync(m => m.ID == id);
 
             if (Meeting == null)
