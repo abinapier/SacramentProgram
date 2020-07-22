@@ -34,6 +34,7 @@ namespace SacramentProgram.Pages.Speakers
             IQueryable<string> personQuery = from p in _context.Person
                                             orderby p.LastName
                                             select p.FullName;
+            
             await _context.Meeting.ToListAsync();
 
             var speaker = from s in _context.Speaker
@@ -50,6 +51,7 @@ namespace SacramentProgram.Pages.Speakers
             {
                 speaker = speaker.Where(x => x.Person == Speaker);
             }
+
             Person = new SelectList(await personQuery.Distinct().ToListAsync());
             
             Speaker = await _context.Speaker.ToListAsync();
