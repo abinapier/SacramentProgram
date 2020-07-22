@@ -1,3 +1,4 @@
+
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
@@ -88,11 +89,14 @@ a {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
-
+.program dd, .program dt {
+    padding-bottom: 40px;
+}
 @media print{
     @page {
         margin: 1in;
     }
+    
     header, footer, a, h1, h4, hr{
         display:none;
     }
