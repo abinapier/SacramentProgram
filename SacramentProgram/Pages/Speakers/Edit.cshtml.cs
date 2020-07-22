@@ -26,13 +26,15 @@ namespace SacramentProgram.Pages.Speakers
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            
             if (id == null)
             {
                 return NotFound();
             }
-
-            Speaker = await _context.Speaker.FirstOrDefaultAsync(m => m.ID == id);
             
+            Speaker = await _context.Speaker.FirstOrDefaultAsync(m => m.ID == id);
+            await _context.Meeting.ToListAsync();
+            await _context.Person.ToListAsync();
 
             if (Speaker == null)
             {
