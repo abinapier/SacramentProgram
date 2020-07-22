@@ -22,6 +22,8 @@ namespace SacramentProgram.Models
                 return FullPerformance;
             }
         }
+
+        [Display(Name = "Song Title")]
         public int SongID { get; set; }
     }
 }
