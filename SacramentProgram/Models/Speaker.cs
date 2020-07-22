@@ -10,10 +10,13 @@ namespace SacramentProgram.Models
 
         [Display(Name = "Name")]
         public Person Person { get; set; }
+        [Display(Name = "Meeting Date")]
         public Meeting Meeting { get; set; }
         public string Topic { get; set; }
 
+        [Display(Name = "Name")]
         public int PersonID { get; set; }
+        [Display(Name = "Meeting Date")]
         public int MeetingID { get; set; }
 
 
