@@ -93,13 +93,14 @@
             @Html.DisplayNameFor(model => model.Meeting.Speakers)
         </dt>
         <dd class="col-sm-8">
-            
-            @foreach (var speaker in Model.Meeting.Speakers)
-            {
-                @Html.DisplayFor(modelItem => speaker.Person.FullName)
-                
+            <ul>
+                @foreach (var speaker in Model.Meeting.Speakers)
+                {
+                <li>@Html.DisplayFor(modelItem => speaker.Person.FullName)</li>
 
-            }
+
+                }
+            </ul>
         </dd>
     </dl>
 </div>
