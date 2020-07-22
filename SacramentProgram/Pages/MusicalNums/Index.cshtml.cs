@@ -23,6 +23,7 @@ namespace SacramentProgram.Pages.MusicalNums
 
         public async Task OnGetAsync()
         {
+            await _context.Song.ToListAsync();
             MusicalNum = await _context.MusicalNum.ToListAsync();
         }
     }
