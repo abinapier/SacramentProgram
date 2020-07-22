@@ -22,9 +22,9 @@ namespace SacramentProgram.Pages.MusicalNums
 
         public IActionResult OnGet()
         {
-            PopulatePersonDropDownList(_context);
+            
             PopulateSongDropDownList(_context);
-            PopulateMusicNumDropDownList(_context);
+           
             return Page();
         }
 
@@ -35,22 +35,25 @@ namespace SacramentProgram.Pages.MusicalNums
         // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
 
-            // if (await TryUpdateModelAsync<Meeting>(
-            // emptyMeeting,
-            // "Meeting",   // Prefix for form value.
-            // s => s.ID, s => s.MeetingDate, s => s.Conducting, s => s.Presiding, s => s.Accompaniment, s => s.LeadingMusic, s => s.OpeningSong, s => s.OpeningPrayer, s => s.SacramentSong, s => s.MusicalNumber, s => s.IntermediateSong, s => s.ClosingSong, s => s.ClosingPrayerId, s => s.WardName, s => s.Speakers))
-            //{
-            // _context.Meeting.Add(emptyMeeting);
-            //  await _context.SaveChangesAsync();
-            //  return RedirectToPage("./Index");
-            // }
-
+            var emptyMusicnum = new MusicalNum();
+            if (await TryUpdateModelAsync<MusicalNum>(
+                 emptyMusicnum,
+                 "Musicalnum",   // Prefix for form value.
+                  s => s.ID, s => s.SongID, s => s.Performer))
+            {
+                _context.MusicalNum.Add(emptyMusicnum);
+                await _context.SaveChangesAsync();
+                return RedirectToPage("./Index");
+            }
             // Select DepartmentID if TryUpdateModelAsync fails.
-            PopulatePersonDropDownList(_context);
+
             PopulateSongDropDownList(_context);
-            PopulateMusicNumDropDownList(_context);
+            
             return Page();
         }
     }
