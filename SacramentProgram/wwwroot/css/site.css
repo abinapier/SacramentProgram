@@ -11,15 +11,23 @@ html {
     margin: 0 auto !important;
 }
 
+@media screen and (max-width:60em) {
+    html {
+        background: url("../images/Temple2.jpg") no-repeat center center fixed !important;
+        background-size: cover !important;
+        margin: 0 auto !important;
+    }
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: none !important;
 }
 
 main {
-    background-color: #07393C;
+    background-color: #0A0029;
     padding: 15px;
-    color: #90DDF0;
+    color: #DEEBFF;
 }
 
 h1,
@@ -36,7 +44,7 @@ th {
 }
 
 .table {
-    color: #90DDF0;
+    color: #DEEBFF;
 }
 
 p {
@@ -47,9 +55,13 @@ p {
     color: #fff;
 }
 
-    .btn:hover {
+.btn:hover {
         color: #90DDF0
-    }
+ }
+
+.nav-link {
+    padding-right: 2em !important;
+}
 
 /*Preset Styling*/
 a.navbar-brand {
@@ -114,9 +126,10 @@ body {
   margin-bottom: 60px;
 }
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+    background-color: #fff;
 }
