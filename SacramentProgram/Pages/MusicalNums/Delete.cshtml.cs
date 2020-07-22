@@ -35,6 +35,7 @@ namespace SacramentProgram.Pages.MusicalNums
             {
                 return NotFound();
             }
+            await _context.Song.ToListAsync();
             return Page();
         }
 
