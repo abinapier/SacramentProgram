@@ -66,6 +66,19 @@
             @Html.DisplayFor(model => model.Meeting.SacramentSong.Name)
         </dd>
         <dt class="col-sm-4">
+            @Html.DisplayNameFor(model => model.Meeting.Speakers)
+        </dt>
+        <dd class="col-sm-8">
+            <ul>
+                @foreach (var speaker in Model.Meeting.Speakers)
+                {
+                    <li>@Html.DisplayFor(modelItem => speaker.Person.FullName)</li>
+
+
+                }
+            </ul>
+        </dd>
+        <dt class="col-sm-4">
             @Html.DisplayNameFor(model => model.Meeting.MusicalNumber)
         </dt>
         <dd class="col-sm-8">
@@ -89,22 +102,11 @@
         <dd class="col-sm-8">
             @Html.DisplayFor(model => model.Meeting.ClosingPrayerId.FullName)
         </dd>
-        <dt class="col-sm-4">
-            @Html.DisplayNameFor(model => model.Meeting.Speakers)
-        </dt>
-        <dd class="col-sm-8">
-            <ul>
-                @foreach (var speaker in Model.Meeting.Speakers)
-                {
-                <li>@Html.DisplayFor(modelItem => speaker.Person.FullName)</li>
 
-
-                }
-            </ul>
-        </dd>
     </dl>
 </div>
 <div>
+    <button onclick="printView()" id="printBtn" class="btn btn-primary">Print</button>
     <a asp-page="./Edit" asp-route-id="@Model.Meeting.ID">Edit</a> |
     <a asp-page="./Index">Back to List</a>
 </div>

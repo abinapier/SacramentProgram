@@ -28,14 +28,24 @@ namespace SacramentProgram.Pages.Meetings
             {
                 return NotFound();
             }
+            await _context.Person.ToListAsync();
+            await _context.Song.ToListAsync();
+            await _context.MusicalNum.ToListAsync();
+            await _context.Speaker.ToListAsync();
 
-            Meeting = await _context.Meeting.FirstOrDefaultAsync(m => m.ID == id);
+
+            Meeting = await _context.Meeting
+                .Include(c => c.Speakers)
+                .FirstOrDefaultAsync(m => m.ID == id);
 
             if (Meeting == null)
             {
                 return NotFound();
             }
+
+
             return Page();
+            
         }
 
         public async Task<IActionResult> OnPostAsync(int? id)
