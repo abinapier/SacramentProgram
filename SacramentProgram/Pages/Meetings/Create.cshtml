@@ -88,7 +88,7 @@
                 <span asp-validation-for="Meeting.MusicalNumberID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.IntermediateSongID" class="control-label"></label>
+                <label asp-for="Meeting.IntermediateSong" class="control-label"></label>
                 <select asp-for="Meeting.IntermediateSongID" class="form-control"
                         asp-items="@Model.SongDropDown">
                     <option value="">-- Select Song --</option>
@@ -96,7 +96,7 @@
                 <span asp-validation-for="Meeting.IntermediateSongID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.ClosingSongID" class="control-label"></label>
+                <label asp-for="Meeting.ClosingSong" class="control-label"></label>
                 <select asp-for="Meeting.ClosingSongID" class="form-control"
                         asp-items="@Model.SongDropDown">
                     <option value="">-- Select Song --</option>
@@ -104,7 +104,7 @@
                 <span asp-validation-for="Meeting.ClosingSongID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.ClosingPrayerIdID" class="control-label"></label>
+                <label asp-for="Meeting.ClosingPrayerId" class="control-label"></label>
                 <select asp-for="Meeting.ClosingPrayerIdID" class="form-control"
                         asp-items="@Model.PersonDropDown">
                     <option value="">-- Select Person --</option>

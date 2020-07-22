@@ -55,9 +55,13 @@ p {
     color: #fff;
 }
 
-    .btn:hover {
+.btn:hover {
         color: #90DDF0
-    }
+ }
+
+.nav-link {
+    padding-right: 2em !important;
+}
 
 /*Preset Styling*/
 a.navbar-brand {

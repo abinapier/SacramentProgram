@@ -42,7 +42,7 @@ namespace SacramentProgram.Pages.Meetings
                              select d;
 
             MusicNumDropDown = new SelectList(musicQuery,
-                        "ID", "FullPerformance");
+                        "ID", "MusicalPerformance");
         }
 
         

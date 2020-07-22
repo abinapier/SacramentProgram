@@ -18,7 +18,7 @@ namespace SacramentProgram.Models
         {
             get
             {
-                var FullPerformance = Song + " " + Performer + " ";
+                var FullPerformance = Song.Name + " - " + Performer + " ";
                 return FullPerformance;
             }
         }
