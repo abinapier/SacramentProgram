@@ -98,7 +98,7 @@ a {
         margin: 1in;
     }
 
-    header, footer, a, h1, h4, hr {
+    header, footer, a, h1, h4, hr, button#printBtn {
         display: none;
     }
 
