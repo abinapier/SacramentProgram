@@ -16,13 +16,13 @@
             @Html.DisplayNameFor(model => model.Speaker.Person)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Speaker.Person)
+            @Html.DisplayFor(model => model.Speaker.Person.FullName)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Speaker.Meeting)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Speaker.Meeting)
+            @Html.DisplayFor(model => model.Speaker.Meeting.MeetingDate)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Speaker.Topic)

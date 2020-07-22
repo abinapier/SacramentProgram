@@ -29,6 +29,8 @@ namespace SacramentProgram.Pages.Speakers
                 return NotFound();
             }
 
+            await _context.Meeting.ToListAsync();
+            await _context.Person.ToListAsync();
             Speaker = await _context.Speaker.FirstOrDefaultAsync(m => m.ID == id);
 
             if (Speaker == null)
