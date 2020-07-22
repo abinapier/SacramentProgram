@@ -97,7 +97,7 @@ namespace SacramentProgram.Migrations
                     b.Property<string>("Performer")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("SongID")
+                    b.Property<int>("SongID")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("ID");
@@ -239,7 +239,9 @@ namespace SacramentProgram.Migrations
                 {
                     b.HasOne("SacramentProgram.Models.Song", "Song")
                         .WithMany()
-                        .HasForeignKey("SongID");
+                        .HasForeignKey("SongID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("SacramentProgram.Models.Speaker", b =>
