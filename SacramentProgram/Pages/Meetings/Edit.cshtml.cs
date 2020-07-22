@@ -8,10 +8,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SacramentProgram.Data;
 using SacramentProgram.Models;
+using SacramentProgram.Pages;
 
 namespace SacramentProgram.Pages.Meetings
 {
-    public class EditModel : PageModel
+    public class EditModel : PersonPageModel
     {
         private readonly SacramentProgram.Data.SacramentProgramContext _context;
 
@@ -36,6 +37,10 @@ namespace SacramentProgram.Pages.Meetings
             {
                 return NotFound();
             }
+            PopulatePersonDropDownList(_context);
+            PopulateSongDropDownList(_context);
+            PopulateMusicNumDropDownList(_context);
+            PopulateMusicNumDropDownList(_context);
             return Page();
         }
 
@@ -66,6 +71,10 @@ namespace SacramentProgram.Pages.Meetings
                 }
             }
 
+            PopulatePersonDropDownList(_context);
+            PopulateSongDropDownList(_context);
+            PopulateMusicNumDropDownList(_context);
+            PopulateMusicNumDropDownList(_context);
             return RedirectToPage("./Index");
         }
 

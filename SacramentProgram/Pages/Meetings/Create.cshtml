@@ -24,7 +24,7 @@
                 <span asp-validation-for="Meeting.WardName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.ConductingID" class="control-label"></label>
+                <label asp-for="Meeting.Conducting" class="control-label"></label>
                 <select asp-for="Meeting.ConductingID" class="form-control"
                         asp-items="@Model.PersonDropDown">
                     <option value="">-- Select Person --</option>
@@ -32,7 +32,7 @@
                 <span asp-validation-for="Meeting.ConductingID" class="text-danger" />
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.PresidingID" class="control-label"></label>
+                <label asp-for="Meeting.Presiding" class="control-label"></label>
                 <select asp-for="Meeting.PresidingID" class="form-control"
                         asp-items="@Model.PersonDropDown">
                     <option value="">-- Select Person --</option>
@@ -40,7 +40,7 @@
                 <span asp-validation-for="Meeting.PresidingID" class="text-danger" />
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.AccompanimentID" class="control-label"></label>
+                <label asp-for="Meeting.Accompaniment" class="control-label"></label>
                 <select asp-for="Meeting.AccompanimentID" class="form-control"
                         asp-items="@Model.PersonDropDown">
                     <option value="">-- Select Person --</option>
@@ -48,7 +48,7 @@
                 <span asp-validation-for="Meeting.AccompanimentID" class="text-danger" />
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.LeadingMusicID" class="control-label"></label>
+                <label asp-for="Meeting.LeadingMusic" class="control-label"></label>
                 <select asp-for="Meeting.LeadingMusicID" class="form-control"
                         asp-items="@Model.PersonDropDown">
                     <option value="">-- Select Person --</option>
@@ -56,7 +56,7 @@
                 <span asp-validation-for="Meeting.LeadingMusicID" class="text-danger" />
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.OpeningSongID" class="control-label"></label>
+                <label asp-for="Meeting.OpeningSong" class="control-label"></label>
                 <select asp-for="Meeting.OpeningSongID" class="form-control"
                         asp-items="@Model.SongDropDown">
                     <option value="">-- Select Song --</option>
@@ -64,7 +64,7 @@
                 <span asp-validation-for="Meeting.OpeningSongID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.OpeningPrayerID" class="control-label"></label>
+                <label asp-for="Meeting.OpeningPrayer" class="control-label"></label>
                 <select asp-for="Meeting.OpeningPrayerID" class="form-control"
                         asp-items="@Model.PersonDropDown">
                     <option value="">-- Select Person --</option>
@@ -72,7 +72,7 @@
                 <span asp-validation-for="Meeting.OpeningPrayerID" class="text-danger" />
             </div>
             <div class="form-group">
-                <label asp-for="Meeting.SacramentSongID" class="control-label"></label>
+                <label asp-for="Meeting.SacramentSong" class="control-label"></label>
                 <select asp-for="Meeting.SacramentSongID" class="form-control"
                         asp-items="@Model.SongDropDown">
                     <option value="">-- Select Song --</option>
@@ -81,8 +81,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="Meeting.MusicalNumber" class="control-label"></label>
-                <input asp-for="Meeting.MusicalNumber" class="form-control" />
-                <span asp-validation-for="Meeting.MusicalNumber" class="text-danger"></span>
+                <select asp-for="Meeting.MusicalNumberID" class="form-control"
+                        asp-items="@Model.MusicNumDropDown">
+                    <option value="">-- Select Musical Number --</option>
+                </select>
+                <span asp-validation-for="Meeting.MusicalNumberID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Meeting.IntermediateSongID" class="control-label"></label>

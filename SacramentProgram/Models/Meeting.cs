@@ -11,6 +11,7 @@ namespace SacramentProgram.Models
 
         [Display(Name = "Meeting Date")]
         [DataType(DataType.Date)]
+        [Required]
         public DateTime MeetingDate { get; set; }
 
         
@@ -41,7 +42,7 @@ namespace SacramentProgram.Models
         [Display(Name = "Musical Number")]
         public MusicalNum MusicalNumber { get; set; }
 
-        [Display(Name = "Musical Number")]
+        [Display(Name = "Intermediate Song")]
         public Song IntermediateSong { get; set; }
 
         [Display(Name = "Closing Song")]
