@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SacramentProgram.Models
 {
@@ -11,6 +12,8 @@ namespace SacramentProgram.Models
         public Song Song { get; set; }
 
         public string Performer { get; set; }
+
+        [NotMapped]
         public string MusicalPerformance
         {
             get
@@ -19,5 +22,6 @@ namespace SacramentProgram.Models
                 return FullPerformance;
             }
         }
+        public int SongID { get; set; }
     }
 }
