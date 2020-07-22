@@ -30,12 +30,22 @@ namespace SacramentProgram.Pages.Meetings
             await _context.Person.ToListAsync();
             await _context.Song.ToListAsync();
             await _context.MusicalNum.ToListAsync();
-            Meeting = await _context.Meeting.FirstOrDefaultAsync(m => m.ID == id);
+            await _context.Speaker.ToListAsync();
+            //Meeting = await _context.Meeting.FirstOrDefaultAsync(m => m.ID == id);
+            
+            //return Page();
+
+            Meeting = await _context.Meeting
+                .Include(c => c.Speakers)
+                .FirstOrDefaultAsync(m => m.ID == id);
+
 
             if (Meeting == null)
             {
                 return NotFound();
             }
+
+
             return Page();
         }
     }
