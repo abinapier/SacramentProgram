@@ -8,10 +8,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SacramentProgram.Data;
 using SacramentProgram.Models;
+using SacramentProgram.Pages.Meetings;
 
 namespace SacramentProgram.Pages.MusicalNums
 {
-    public class EditModel : PageModel
+    public class EditModel : PersonPageModel
     {
         private readonly SacramentProgram.Data.SacramentProgramContext _context;
 
@@ -31,26 +32,38 @@ namespace SacramentProgram.Pages.MusicalNums
             }
 
             MusicalNum = await _context.MusicalNum.FirstOrDefaultAsync(m => m.ID == id);
+            
+            await _context.Song.ToListAsync();
+            
+
 
             if (MusicalNum == null)
             {
                 return NotFound();
             }
+
+            PopulateSongDropDownList(_context);
+
             return Page();
         }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int? id)
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            _context.Attach(MusicalNum).State = EntityState.Modified;
+            var Musictoupdate = await _context.MusicalNum.FindAsync(id);
 
-            try
+            if (await TryUpdateModelAsync<MusicalNum>(
+                 Musictoupdate,
+                 "Musicalnum",   // Prefix for form value.
+                  s => s.ID, s => s.SongID, s => s.Performer))
+
+                try
             {
                 await _context.SaveChangesAsync();
             }
@@ -65,7 +78,7 @@ namespace SacramentProgram.Pages.MusicalNums
                     throw;
                 }
             }
-
+            PopulateSongDropDownList(_context);
             return RedirectToPage("./Index");
         }
 
