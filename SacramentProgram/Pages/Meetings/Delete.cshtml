@@ -28,69 +28,75 @@
             @Html.DisplayNameFor(model => model.Meeting.Conducting)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Meeting.Conducting)
+            @Html.DisplayFor(model => model.Meeting.Conducting.FullName)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Meeting.Presiding)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Meeting.Presiding)
+            @Html.DisplayFor(model => model.Meeting.Presiding.FullName)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Meeting.Accompaniment)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Meeting.Accompaniment)
+            @Html.DisplayFor(model => model.Meeting.Accompaniment.FullName)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Meeting.LeadingMusic)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Meeting.LeadingMusic)
+            @Html.DisplayFor(model => model.Meeting.LeadingMusic.FullName)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Meeting.OpeningSong)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Meeting.OpeningSong)
+            @Html.DisplayFor(model => model.Meeting.OpeningSong.Name)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Meeting.OpeningPrayer)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Meeting.OpeningPrayer)
+            @Html.DisplayFor(model => model.Meeting.OpeningPrayer.FullName)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Meeting.SacramentSong)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Meeting.SacramentSong)
+            @Html.DisplayFor(model => model.Meeting.SacramentSong.Name)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Meeting.MusicalNumber)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Meeting.MusicalNumber)
+            @Html.DisplayFor(model => model.Meeting.MusicalNumber.MusicalPerformance)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Meeting.IntermediateSong)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Meeting.IntermediateSong)
+            @Html.DisplayFor(model => model.Meeting.IntermediateSong.Name)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Meeting.ClosingSong)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Meeting.ClosingSong)
+            @Html.DisplayFor(model => model.Meeting.ClosingSong.Name)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Meeting.ClosingPrayerId)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Meeting.ClosingPrayerId)
+            @Html.DisplayFor(model => model.Meeting.ClosingPrayerId.FullName)
         </dd>
-        
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Meeting.Speakers)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Meeting.Speakers)
+        </dd>
+
 
     </dl>
     

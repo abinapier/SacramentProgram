@@ -67,7 +67,7 @@ namespace SacramentProgram.Models
         public int OpeningPrayerID { get; set; }
         public int SacramentSongID { get; set; }
         public int? MusicalNumberID { get; set; }
-        public int IntermediateSongID { get; set; }
+        public int? IntermediateSongID { get; set; }
         public int ClosingSongID { get; set; }
         public int ClosingPrayerIdID { get; set; }
 

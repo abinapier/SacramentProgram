@@ -34,7 +34,7 @@ namespace SacramentProgram.Migrations
                     b.Property<int>("ConductingID")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("IntermediateSongID")
+                    b.Property<int?>("IntermediateSongID")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("LeadingMusicID")
@@ -196,9 +196,7 @@ namespace SacramentProgram.Migrations
 
                     b.HasOne("SacramentProgram.Models.Song", "IntermediateSong")
                         .WithMany()
-                        .HasForeignKey("IntermediateSongID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IntermediateSongID");
 
                     b.HasOne("SacramentProgram.Models.Person", "LeadingMusic")
                         .WithMany()
