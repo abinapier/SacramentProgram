@@ -50,7 +50,6 @@ namespace SacramentProgram.Pages.Meetings
             PopulatePersonDropDownList(_context);
             PopulateSongDropDownList(_context);
             PopulateMusicNumDropDownList(_context);
-            PopulateMusicNumDropDownList(_context);
             return Page();
         }
     }

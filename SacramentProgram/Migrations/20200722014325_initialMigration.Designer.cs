@@ -9,7 +9,7 @@ using SacramentProgram.Data;
 namespace SacramentProgram.Migrations
 {
     [DbContext(typeof(SacramentProgramContext))]
-    [Migration("20200722012531_initialMigration")]
+    [Migration("20200722014325_initialMigration")]
     partial class initialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,7 +36,7 @@ namespace SacramentProgram.Migrations
                     b.Property<int>("ConductingID")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("IntermediateSongID")
+                    b.Property<int?>("IntermediateSongID")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("LeadingMusicID")
@@ -198,9 +198,7 @@ namespace SacramentProgram.Migrations
 
                     b.HasOne("SacramentProgram.Models.Song", "IntermediateSong")
                         .WithMany()
-                        .HasForeignKey("IntermediateSongID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IntermediateSongID");
 
                     b.HasOne("SacramentProgram.Models.Person", "LeadingMusic")
                         .WithMany()

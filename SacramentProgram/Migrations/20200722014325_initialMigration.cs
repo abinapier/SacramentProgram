@@ -72,7 +72,7 @@ namespace SacramentProgram.Migrations
                     OpeningPrayerID = table.Column<int>(nullable: false),
                     SacramentSongID = table.Column<int>(nullable: false),
                     MusicalNumberID = table.Column<int>(nullable: true),
-                    IntermediateSongID = table.Column<int>(nullable: false),
+                    IntermediateSongID = table.Column<int>(nullable: true),
                     ClosingSongID = table.Column<int>(nullable: false),
                     ClosingPrayerIdID = table.Column<int>(nullable: false)
                 },
@@ -108,7 +108,7 @@ namespace SacramentProgram.Migrations
                         column: x => x.IntermediateSongID,
                         principalTable: "Song",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Meeting_Person_LeadingMusicID",
                         column: x => x.LeadingMusicID,
