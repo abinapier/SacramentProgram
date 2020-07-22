@@ -17,9 +17,9 @@ body {
 }
 
 main {
-    background-color: #07393C;
+    background-color: #0A0029;
     padding: 15px;
-    color: #90DDF0;
+    color: #DEEBFF;
 }
 
 h1,
@@ -36,7 +36,7 @@ th {
 }
 
 .table {
-    color: #90DDF0;
+    color: #DEEBFF;
 }
 
 p {
