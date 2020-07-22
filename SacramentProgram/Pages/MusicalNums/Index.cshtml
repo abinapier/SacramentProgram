@@ -14,7 +14,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.MusicalNum[0].Performer)
+                Performance
             </th>
             <th></th>
         </tr>
@@ -23,7 +23,7 @@
 @foreach (var item in Model.MusicalNum) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Performer)
+                @Html.DisplayFor(modelItem => item.MusicalPerformance)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
