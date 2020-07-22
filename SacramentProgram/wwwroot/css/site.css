@@ -87,6 +87,27 @@ a {
   border-color: #1861ac;
 }
 
+@media print{
+    
+    header, footer, a, h1, h4, hr{
+        display:none;
+    }
+    dl{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    dd, dt{
+       
+        width: 100%;
+    }
+    dd{
+        font-size: 16px;
+    }
+    dt{
+        font-size: 24px;
+    }
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
